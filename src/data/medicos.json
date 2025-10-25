@@ -1,0 +1,20 @@
+[
+  {
+    "slug": "euge",
+    "nombre": "Dra. Eugenia Perez Lloveras",
+    "especialidad": "Hematología",
+    "telefono": "+5491122334455",
+    "email": "euge@doctor.com",
+    "foto": "/euge.jpg",
+    "descripcion": "Clinica médica especializada en hematología."
+  },
+  {
+    "slug": "octavio",
+    "nombre": "Dr. Octavio Ramírez",
+    "especialidad": "Cardiólogo",
+    "telefono": "+5491166778899",
+    "email": "octavio@doctor.com",
+    "foto": "/octavio.jpg",
+    "descripcion": "Atención integral en salud cardiovascular."
+  }
+]
