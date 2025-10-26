@@ -4,6 +4,10 @@ import Link from 'next/link'
 import Image from 'next/image'
 
 export const metadata: Metadata = {
+  metadataBase:new URL(
+    process.env.NODE_ENV === 'production' 
+      ? 'https://tudominio.com' 
+      : 'http://localhost:3000'),
   title: 'Plataforma Médica',
   description: 'Tu landing personalizada como profesional de la salud.',
 }

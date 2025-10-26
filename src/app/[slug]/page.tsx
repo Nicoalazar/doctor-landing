@@ -6,8 +6,9 @@ import CTA from '@/components/CTA'
 import { getMedicoBySlug } from '@/lib/medicos'
 import type { MedicoPageProps } from '@/types/props'
 
-export default function MedicoPage({ params }: MedicoPageProps) {
-  const medico = getMedicoBySlug(params.slug)
+export default async function MedicoPage({ params }: MedicoPageProps) {
+  const { slug } = await params
+  const medico = getMedicoBySlug(slug)
 
   if (!medico) return notFound()
 
@@ -35,8 +36,9 @@ export default function MedicoPage({ params }: MedicoPageProps) {
   )
 }
 
-export function generateMetadata({ params }: MedicoPageProps): Metadata {
-  const medico = getMedicoBySlug(params.slug)
+export async function generateMetadata({ params }: MedicoPageProps): Promise<Metadata> {
+  const { slug } = await params
+  const medico = getMedicoBySlug(slug)
 
   if (!medico) {
     return {
