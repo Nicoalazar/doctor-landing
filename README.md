@@ -1,36 +1,40 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+## Plataforma Médica
 
-## Getting Started
+Landing page en Next.js orientada a profesionales de la salud que necesitan una presencia digital simple y efectiva. El proyecto incluye un catálogo de médicos con páginas individuales, formulario de contacto y un API público para reutilizar la información desde otras interfaces.
 
-First, run the development server:
+### Requisitos
+
+- Node.js 20+
+- npm (o el gestor equivalente que prefieras)
+
+### Comandos disponibles
 
 ```bash
+# Inicia el servidor de desarrollo en http://localhost:3000
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+
+# Genera la build de producción
+npm run build
+
+# Ejecuta el servidor usando la build generada
+npm run start
+
+# Ejecuta las reglas de ESLint
+npm run lint
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Estructura relevante
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- `src/app` – Rutas principales de la aplicación y layouts compartidos.
+- `src/components` – Componentes reutilizables como CTA y fichas de médicos.
+- `src/data` – Fuente de datos estática con la información del equipo médico.
+- `src/lib` – Utilidades para acceder a los datos.
+- `src/types` – Tipos TypeScript compartidos.
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+### API
 
-## Learn More
+`GET /api/medicos` devuelve el listado de profesionales en formato JSON para su consumo por terceros.
 
-To learn more about Next.js, take a look at the following resources:
+### Desarrollo futuro
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Las secciones y estilos se construyeron con Tailwind CSS, por lo que es sencillo extender el diseño agregando nuevas variantes o bloques de contenido.

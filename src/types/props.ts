@@ -1,4 +1,4 @@
-export type Props = {
+export type MedicoPageProps = {
   params: {
     slug: string
   }
