@@ -12,7 +12,6 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="es">
       <body className="bg-gray-50 text-gray-900 flex flex-col min-h-screen font-sans">
-        {/* Header / Navbar */}
         <header className="bg-white border-b shadow-sm">
           <div className="max-w-6xl mx-auto px-4 py-4 flex items-center justify-between">
             <Link href="/" className="flex items-center gap-2">
@@ -22,17 +21,16 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <nav className="flex gap-6 text-sm">
               <Link href="/" className="hover:underline">Inicio</Link>
               <Link href="/#beneficios" className="hover:underline">Beneficios</Link>
+              <Link href="/#equipo" className="hover:underline">Equipo</Link>
               <Link href="/#contacto" className="hover:underline">Contacto</Link>
             </nav>
           </div>
         </header>
 
-        {/* Contenido principal */}
         <main className="flex-grow">
           {children}
         </main>
 
-        {/* Footer */}
         <footer className="bg-white border-t mt-12 text-sm text-gray-600">
           <div className="max-w-6xl mx-auto px-4 py-6 flex flex-col sm:flex-row justify-between items-center">
             <p>© {new Date().getFullYear()} Plataforma Médica. Todos los derechos reservados.</p>

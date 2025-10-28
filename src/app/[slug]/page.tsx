@@ -1,14 +1,13 @@
-import { getMedicoBySlug } from '@/lib/medicos'
-import { notFound } from 'next/navigation'
 import Image from 'next/image'
-import CTA from '@/components/CTA'
 import type { Metadata } from 'next'
-import { Props } from '@/types/props' 
+import { notFound } from 'next/navigation'
 
+import CTA from '@/components/CTA'
+import { getMedicoBySlug } from '@/lib/medicos'
+import type { MedicoPageProps } from '@/types/props'
 
-export default async function MedicoPage({ params }: Props) {
-  const resolvedParams = await params
-  const medico = getMedicoBySlug(resolvedParams.slug)
+export default function MedicoPage({ params }: MedicoPageProps) {
+  const medico = getMedicoBySlug(params.slug)
 
   if (!medico) return notFound()
 
@@ -36,9 +35,8 @@ export default async function MedicoPage({ params }: Props) {
   )
 }
 
-export async function generateMetadata({ params }: { params: { slug: string } }): Promise<Metadata> {
-  const resolvedParams = await params
-  const medico = getMedicoBySlug(resolvedParams.slug)
+export function generateMetadata({ params }: MedicoPageProps): Metadata {
+  const medico = getMedicoBySlug(params.slug)
 
   if (!medico) {
     return {
